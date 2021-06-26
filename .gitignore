@@ -25,3 +25,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /backend-rails-api/config/master.key
+
+# Ignore environment variables
+/backend-rails-api/.env
