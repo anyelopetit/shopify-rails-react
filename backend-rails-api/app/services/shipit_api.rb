@@ -29,7 +29,7 @@ class ShipitApi
           RestClient.try(http_method, url, headers)
         end
       rescue StandardError => e
-        e.response
+        e
       end
     Decode.json(api_response)
   end
