@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   scope module: :api do
     draw :v1
   end
+  match '*path', to: 'shopify#index', via: :all
 end

@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shopify_id: MyString
+  payment: MyString
+  products: MyString
+  origin: MyString
+  sizes: MyString
+  kind: MyString
+  reference: MyString
+  destiny: MyString
+  items: MyString
+  courier: MyString
+  status: 1
+
+two:
+  shopify_id: MyString
+  payment: MyString
+  products: MyString
+  origin: MyString
+  sizes: MyString
+  kind: MyString
+  reference: MyString
+  destiny: MyString
+  items: MyString
+  courier: MyString
+  status: 1
