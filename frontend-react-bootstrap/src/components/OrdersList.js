@@ -7,7 +7,9 @@ const OrdersList = props => {
         return(
           <tr>
             <td>{order.id}</td>
-            <td>{order.name}</td>
+            <td>{order.financial_status}</td>
+            <td>{order.total_price} {order.currency}</td>
+            <td>{order.created_at}</td>
           </tr>
         )
       })
