@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order: one
+  status: 1
+  street: MyString
+  house_number: MyString
+  compliment: MyString
+
+two:
+  order: two
+  status: 1
+  street: MyString
+  house_number: MyString
+  compliment: MyString
