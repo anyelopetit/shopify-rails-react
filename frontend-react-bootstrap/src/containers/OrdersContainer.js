@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import getOrders from '../actions/getOrders';
+import OrdersList from '../components/OrdersList';
 
 class OrdersContainer extends React.Component {
   constructor(props) {
@@ -12,21 +13,15 @@ class OrdersContainer extends React.Component {
 
   componentDidMount() {
     console.log('OrdersContainer was mounted')
-    let orders = this.props.getOrders();
-    console.log('orders: ', orders)
+    this.props.getOrders();
   }
 
   render() {
-    return(
-      <div>
-        <h1>OrdersContainer</h1>
-        if (this.props.orders.orders) {
-          this.props.orders
-        } else {
-          <h2>No orders yet.</h2>
-        }
-      </div>
-    )
+    if (this.props.orders.orders) {
+      return <OrdersList orders={this.props.orders.orders} />
+    } else {
+      return <h2>No orders yet.</h2>
+    }
   }
 }
 
