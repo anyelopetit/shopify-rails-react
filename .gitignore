@@ -28,3 +28,4 @@
 
 # Ignore environment variables
 /backend-rails-api/.env
+/frontend-react-bootstrap/.env
