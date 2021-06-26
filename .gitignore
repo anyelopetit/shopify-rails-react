@@ -5,23 +5,23 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore bundler config.
-/.bundle
+/backend-rails-api/.bundle
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
-!/log/.keep
-!/tmp/.keep
+/backend-rails-api/log/*
+/backend-rails-api/tmp/*
+/backend-rails-api!/log/.keep
+/backend-rails-api!/tmp/.keep
 
 # Ignore pidfiles, but keep the directory.
-/tmp/pids/*
-!/tmp/pids/
-!/tmp/pids/.keep
+/backend-rails-api/tmp/pids/*
+/backend-rails-api!/tmp/pids/
+/backend-rails-api!/tmp/pids/.keep
 
 # Ignore uploaded files in development.
-/storage/*
-!/storage/.keep
-.byebug_history
+/backend-rails-api/storage/*
+/backend-rails-api!/storage/.keep
+/backend-rails-api.byebug_history
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
+/backend-rails-api/config/master.key
