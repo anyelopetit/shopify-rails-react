@@ -1,6 +1,108 @@
 {
   "RSpec": {
     "coverage": {
+      "/media/starklord/Projects/shipit-test/backend-rails-api/app/controllers/v1/line_items_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          3,
+          null,
+          3,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          2,
+          2,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          null,
+          1,
+          11,
+          null,
+          null,
+          null,
+          1,
+          6,
+          null,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null
+        ]
+      },
+      "/media/starklord/Projects/shipit-test/backend-rails-api/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/media/starklord/Projects/shipit-test/backend-rails-api/app/controllers/concerns/api_requestable.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
       "/media/starklord/Projects/shipit-test/backend-rails-api/app/controllers/v1/orders_controller.rb": {
         "lines": [
           null,
@@ -64,57 +166,19 @@
           null
         ]
       },
-      "/media/starklord/Projects/shipit-test/backend-rails-api/app/controllers/application_controller.rb": {
+      "/media/starklord/Projects/shipit-test/backend-rails-api/app/controllers/v1/products_controller.rb": {
         "lines": [
           null,
           null,
           1,
           1,
-          null
-        ]
-      },
-      "/media/starklord/Projects/shipit-test/backend-rails-api/app/controllers/concerns/api_requestable.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null
-        ]
-      },
-      "/media/starklord/Projects/shipit-test/backend-rails-api/app/controllers/v1/shipments_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
           1,
           null,
           null,
           1,
-          2,
+          3,
           null,
-          2,
+          3,
           null,
           null,
           null,
@@ -144,8 +208,6 @@
           null,
           null,
           1,
-          2,
-          null,
           2,
           null,
           null,
@@ -164,11 +226,164 @@
           null
         ]
       },
+      "/media/starklord/Projects/shipit-test/backend-rails-api/app/controllers/v1/shipments_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          2,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          2,
+          2,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          2,
+          null,
+          null,
+          1,
+          null,
+          1,
+          10,
+          null,
+          null,
+          null,
+          1,
+          6,
+          null,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null
+        ]
+      },
+      "/media/starklord/Projects/shipit-test/backend-rails-api/app/controllers/v1/variants_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          3,
+          null,
+          3,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          2,
+          2,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          null,
+          1,
+          11,
+          null,
+          null,
+          null,
+          1,
+          6,
+          null,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null
+        ]
+      },
+      "/media/starklord/Projects/shipit-test/backend-rails-api/app/models/line_item.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/media/starklord/Projects/shipit-test/backend-rails-api/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          20,
+          null,
+          null
+        ]
+      },
       "/media/starklord/Projects/shipit-test/backend-rails-api/app/models/order.rb": {
         "lines": [
           null,
           null,
           null,
+          1,
           1,
           1,
           null,
@@ -181,14 +396,13 @@
           null
         ]
       },
-      "/media/starklord/Projects/shipit-test/backend-rails-api/app/models/application_record.rb": {
+      "/media/starklord/Projects/shipit-test/backend-rails-api/app/models/product.rb": {
         "lines": [
-          1,
-          1,
+          null,
+          null,
           null,
           1,
-          8,
-          null,
+          1,
           null
         ]
       },
@@ -207,12 +421,21 @@
           null
         ]
       },
+      "/media/starklord/Projects/shipit-test/backend-rails-api/app/models/variant.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/media/starklord/Projects/shipit-test/backend-rails-api/app/controllers/shopify_controller.rb": {
         "lines": [
           null,
           null,
           null,
           0,
+          null,
           0,
           0,
           0,
@@ -297,6 +520,6 @@
         }
       }
     },
-    "timestamp": 1624806119
+    "timestamp": 1624826238
   }
 }

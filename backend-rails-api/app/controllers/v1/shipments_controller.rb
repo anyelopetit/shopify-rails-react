@@ -3,11 +3,12 @@
 module V1
   # Shipments Controller
   class ShipmentsController < ApplicationController
+    before_action :set_order
     before_action :set_shipment, only: %i[show update destroy]
 
     # GET /shipments
     def index
-      @shipments = Shipment.all
+      @shipments = @order.shipments
 
       render json: @shipments
     end
@@ -19,10 +20,10 @@ module V1
 
     # POST /shipments
     def create
-      @shipment = Shipment.new(shipment_params)
+      @shipment = @order.shipments.new(shipment_params)
 
       if @shipment.save
-        render json: @shipment, status: :created
+        render json: @shipment, status: :created, location: [:v1, @order]
       else
         render json: @shipment.errors, status: :unprocessable_entity
       end
@@ -46,9 +47,13 @@ module V1
 
     private
 
+    def set_order
+      @order = Order.find(params[:order_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_shipment
-      @shipment = Shipment.find(params[:id])
+      @shipment = @order.shipments.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
