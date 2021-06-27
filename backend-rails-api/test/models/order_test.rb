@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class OrderTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  context 'associations' do
+    should have_many(:shipments).class_name('Shipment')
+  end
 end

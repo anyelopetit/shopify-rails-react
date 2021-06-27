@@ -19,12 +19,12 @@ module V1
 
     # POST api/v1/orders
     def create
-      order = Order.new(order_params)
+      @order = Order.new(order_params)
 
-      if order.save
-        render json: order, status: :created
+      if @order.save
+        render json: @order, status: :created
       else
-        render json: order.errors, status: :unprocessable_entity
+        render json: @order.errors, status: :unprocessable_entity
       end
     end
 
@@ -53,10 +53,7 @@ module V1
 
     # Only allow a trusted parameter "white list" through.
     def order_params
-      params.require(:order).permit(
-        :shopify_id, :payment, :products, :origin, :sizes, :kind, :reference,
-        :destiny, :items, :courier, :status
-      )
+      params.permit(Order.editable_attributes)
     end
   end
 end

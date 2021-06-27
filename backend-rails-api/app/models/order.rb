@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Sale order
 class Order < ApplicationRecord
   has_many :shipments
 
