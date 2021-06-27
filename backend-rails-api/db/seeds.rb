@@ -4,7 +4,44 @@
 require 'hash_dot'
 
 api_orders = ShipitApi.get(ORDERS_URL, AUTH_HEADERS)['orders']
+api_products = ShipitApi.get(PRODUCTS_URL, AUTH_HEADERS)['products']
 fake_order = JSON.parse(File.read("#{Rails.root}/order.json")).to_dot
+
+puts "Shopify Store API has #{api_products&.size.to_i} products"
+
+api_products.each do |api_product|
+  api_product = api_product.to_dot
+  api_product_attributes = api_product.as_json(only: Product.editable_attributes.map(&:to_s))
+
+  product = Product.new(api_product_attributes)
+  product.shopify_id = api_product.id
+
+  if product.save
+    puts "Product ID #{product.id} was saved!"
+
+    api_product.variants.each do |api_variant|
+      api_variant = api_variant.to_dot
+
+      api_variant_attributes =
+        api_variant.as_json(only: Variant.editable_attributes.map(&:to_s))
+
+      variant = Variant.new(api_variant_attributes)
+      variant.shopify_id = api_variant.id
+      variant.product_id = product.id
+      if variant.save!
+        puts "Variant ID #{variant.id} was saved!"
+      elsif variant.errors.full_messages
+        puts "Cannot save variant: #{variant.errors.full_messages}"
+      else
+        puts 'Something happened with this variant :('
+      end
+    end
+  elsif product.errors.full_messages
+    puts "Cannot save product: #{product.errors.full_messages}"
+  else
+    puts 'Something happened with this product:('
+  end
+end
 
 puts "Shopify Store API has #{api_orders&.size.to_i} orders"
 
@@ -16,14 +53,12 @@ if api_orders.blank?
   elsif order.errors.full_messages
     puts "Cannot save order: #{order.errors.full_messages}"
   else
-    puts 'Something happend :('
+    puts 'Something happened with this order :('
   end
   return
 end
 
 api_orders.each do |api_order|
-  puts "API Order data: #{api_order}"
-
   api_order = api_order.to_dot
 
   order = Order.new
@@ -40,9 +75,28 @@ api_orders.each do |api_order|
 
   if order.save
     puts "Order ID #{order.id} was saved!"
+
+    api_order.line_items.each do |api_line_item|
+      api_line_item = api_line_item.to_dot
+
+      api_line_item_attributes =
+        api_line_item.as_json(only: LineItem.editable_attributes.map(&:to_s))
+
+      line_item = LineItem.new(api_line_item_attributes)
+      line_item.shopify_id = api_line_item.id
+      line_item.order_id = order.id
+      line_item.variant_id = Variant.find_by(shopify_id: api_line_item.variant_id).id
+      if line_item.save!
+        puts "LineItem ID #{line_item.id} was saved!"
+      elsif line_item.errors.full_messages
+        puts "Cannot save line_item: #{line_item.errors.full_messages}"
+      else
+        puts 'Something happened with this line_item :('
+      end
+    end
   elsif order.errors.full_messages
     puts "Cannot save order: #{order.errors.full_messages}"
   else
-    puts 'Something happend :('
+    puts 'Something happend with this order :('
   end
 end

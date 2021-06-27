@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_06_27_192653) do
   enable_extension "plpgsql"
 
   create_table "line_items", force: :cascade do |t|
-    t.integer "shopify_id"
+    t.string "shopify_id"
     t.bigint "order_id", null: false
     t.bigint "variant_id", null: false
     t.string "title"
@@ -59,17 +59,23 @@ ActiveRecord::Schema.define(version: 2021_06_27_192653) do
 
   create_table "shipments", force: :cascade do |t|
     t.bigint "order_id", null: false
-    t.integer "status"
-    t.string "street"
-    t.string "house_number"
-    t.string "compliment"
+    t.integer "status", default: 0
+    t.jsonb "payment"
+    t.jsonb "products"
+    t.jsonb "origin"
+    t.jsonb "sizes"
+    t.string "kind"
+    t.string "reference"
+    t.jsonb "destiny"
+    t.string "items"
+    t.string "courier"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["order_id"], name: "index_shipments_on_order_id"
   end
 
   create_table "variants", force: :cascade do |t|
-    t.integer "shopify_id"
+    t.string "shopify_id"
     t.bigint "product_id", null: false
     t.string "title"
     t.float "price"
