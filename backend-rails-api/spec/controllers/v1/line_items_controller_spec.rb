@@ -2,15 +2,18 @@
 
 require 'rails_helper'
 
-RSpec.describe V1::ShipmentsController, type: :controller do
-  let(:attributes) { Shipment.take.as_json }
+RSpec.describe V1::LineItemsController, type: :controller do
+  let(:attributes) { LineItem.last.as_json }
   let(:order) { create(:order) }
-  let(:shipment) { create(:shipment, order: order) }
-  let(:attribute_keys) { Shipment.attribute_names.map(&:to_sym) }
+  let(:product) { create(:product) }
+  let(:variant) { create(:variant, product: product) }
+  let(:line_item) { create(:line_item, variant: variant, order: order) }
+  let(:attribute_keys) { LineItem.attribute_names.map(&:to_sym) }
 
   describe 'GET #index' do
     before do
-      shipment
+      order
+      line_item
       get :index, params: { order_id: order.to_param }
     end
 
@@ -19,7 +22,7 @@ RSpec.describe V1::ShipmentsController, type: :controller do
     end
 
     it 'responses correct attributes' do
-      data = shipment.slice(*attribute_keys).keys.sort
+      data = line_item.slice(*attribute_keys).keys.sort
       expected = response.parsed_body.first.keys.sort
 
       expect(expected).to match_array(data)
@@ -27,14 +30,14 @@ RSpec.describe V1::ShipmentsController, type: :controller do
   end
 
   describe 'GET #show' do
-    before { get :show, params: { order_id: order.to_param, id: shipment.to_param } }
+    before { get :show, params: { order_id: order.to_param, id: line_item.to_param } }
 
     it '200 - Ok' do
       expect(response.status).to eq(200)
     end
 
     it 'responses correct attributes' do
-      data = shipment.slice(*attribute_keys).keys
+      data = line_item.slice(*attribute_keys).keys
       expected = response.parsed_body.keys
 
       expect(expected).to match_array(data)
@@ -42,10 +45,10 @@ RSpec.describe V1::ShipmentsController, type: :controller do
   end
 
   describe 'POST #create' do
-    let(:shipment) { create(:shipment) }
+    let(:line_item) { create(:line_item, order: order, variant: variant) }
 
     before do
-      shipment
+      line_item
       post :create, params: attributes.merge(order_id: order.to_param)
     end
 
@@ -54,35 +57,35 @@ RSpec.describe V1::ShipmentsController, type: :controller do
     end
 
     it 'responses correct attributes' do
-      data = shipment.slice(*attribute_keys).keys
+      data = line_item.slice(*attribute_keys).keys
       expect(response.parsed_body.keys).to match_array(data)
     end
   end
 
   describe 'PUT #update' do
     before do
-      put :update, params: { order_id: order.to_param, id: shipment.to_param, shipment: attributes }
+      put :update, params: { order_id: order.to_param, id: line_item.to_param, line_item: attributes }
     end
 
     it '200 - Ok' do
       expect(response.status).to eq(200)
     end
 
-    it 'responses an shipment object' do
-      attrs = shipment.slice(*attribute_keys).keys
+    it 'responses an line_item object' do
+      attrs = line_item.slice(*attribute_keys).keys
       expect(response.parsed_body.keys).to match_array(attrs)
     end
   end
 
   describe 'DELETE #destroy' do
-    before { delete :destroy, params: { order_id: order.to_param, id: shipment.to_param } }
+    before { delete :destroy, params: { order_id: order.to_param, id: line_item.to_param } }
 
     it '204 - No Content' do
       expect(response.status).to eq(204)
     end
 
-    it 'destroys the shipment' do
-      expect(Shipment.count).to eq(0)
+    it 'destroys the line_item' do
+      expect(LineItem.count).to eq(0)
     end
   end
 end

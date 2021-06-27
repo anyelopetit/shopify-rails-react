@@ -3,6 +3,7 @@
 # Sale order
 class Order < ApplicationRecord
   has_many :shipments
+  has_many :line_items
 
   enum status: {
     pending: 0,
