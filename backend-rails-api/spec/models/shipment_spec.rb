@@ -8,6 +8,6 @@ RSpec.describe Shipment, type: :model do
   end
 
   describe 'validations' do
-    it { should define_enum_for(:status).with_values(%i[taked in_route late delivered cancelled]) }
+    it { should define_enum_for(:status).with_values(%i[taken in_route late delivered cancelled]) }
   end
 end

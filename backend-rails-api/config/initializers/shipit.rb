@@ -14,3 +14,4 @@ AUTH_HEADERS = {
 
 # Orders
 ORDERS_URL = "#{API_ROOT}/orders.json".freeze
+PRODUCTS_URL = "#{API_ROOT}/products.json".freeze
