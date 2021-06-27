@@ -22,7 +22,7 @@ module V1
       @shipment = Shipment.new(shipment_params)
 
       if @shipment.save
-        render json: @shipment, status: :created, location: @shipment
+        render json: @shipment, status: :created
       else
         render json: @shipment.errors, status: :unprocessable_entity
       end
@@ -53,9 +53,7 @@ module V1
 
     # Only allow a trusted parameter "white list" through.
     def shipment_params
-      params.require(:shipment).permit(
-        :order_id, :status, :street, :house_number, :compliment
-      )
+      params.permit(Shipment.editable_attributes)
     end
   end
 end

@@ -10,25 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_26_190933) do
+ActiveRecord::Schema.define(version: 2021_06_26_223839) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "orders", force: :cascade do |t|
     t.string "shopify_id"
-    t.string "payment"
-    t.string "products"
-    t.string "origin"
-    t.string "sizes"
+    t.jsonb "payment"
+    t.jsonb "products"
+    t.jsonb "origin"
+    t.jsonb "sizes"
     t.string "kind"
     t.string "reference"
-    t.string "destiny"
+    t.jsonb "destiny"
     t.string "items"
     t.string "courier"
-    t.integer "status"
+    t.integer "status", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "shipments", force: :cascade do |t|
+    t.bigint "order_id", null: false
+    t.integer "status"
+    t.string "street"
+    t.string "house_number"
+    t.string "compliment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_id"], name: "index_shipments_on_order_id"
+  end
+
+  add_foreign_key "shipments", "orders"
 end
