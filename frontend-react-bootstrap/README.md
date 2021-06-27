@@ -1,6 +1,48 @@
-# Getting Started with Create React App
+# Shipit Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+  <a href="https://www.shipit.cl/">
+    <img src="https://www.shipit.cl/hs-fs/hubfs/img/shipit-logo.png?width=1000&name=shipit-logo.png" alt="Logo" width="250" height="125">
+  </a>
+</h1>
+
+<div align="center">
+  This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+</div>
+
+---
+
+<details open="open">
+<summary>Table of Contents</summary>
+
+- [React App](#react-app)
+  - [Requeriments](#requeriments)
+  - [Installation](#installation)
+  - [Server](#server)
+  - [About development with Create React App](#about-development-with-create-react-app)
+
+</details>
+
+---
+# React App
+
+## Requeriments
+- Yarn 1.22.5
+
+## Installation
+- Install dependencies: `$ yarn install`
+- Add `.env` file in `frontend-react-bootstrap` folder root and added it the saved ngrok URL:
+```
+REACT_APP_API_ROOT=https://[INSTANCE_ID].ngrok.io
+```
+
+## Server
+1. Run server: `$ yarn start`
+2. It will ask you if you wanna start the server in another port than 3000: answer Y (yes)
+3. It will run the server in [localhost:3001](http://localhost:3001)
+
+
+# About development with Create React App
 
 ## Available Scripts
 
