@@ -1,10 +1,9 @@
 import React from 'react';
-import OrdersList from './OrdersList';
+import ProductsList from './ProductsList';
 import { Container, Row, Col, Table, Jumbotron } from 'react-bootstrap';
-import ButtonNew from './ButtonNew'
 
-const OrdersTable = props => {
-  if (props.orders) {
+const ProductsTable = props => {
+  if (props.products) {
     return(
       <Container>
         <Jumbotron fluid>
@@ -12,8 +11,7 @@ const OrdersTable = props => {
             <Row>
               <Col>
                 <h1 className="mt-5 d-flex justify-content-between">
-                  Orders
-                  <ButtonNew url="/orders/new" text="Create order" />
+                  Products
                 </h1>
               </Col>
             </Row>
@@ -23,23 +21,23 @@ const OrdersTable = props => {
           <thead>
             <tr>
               <th>ID</th>
-              <th>Kind</th>
-              <th>Reference</th>
+              <th>Title</th>
+              <th>Vendor</th>
+              <th>Product Type</th>
               <th>Status</th>
-              <th>Price</th>
               <th>Created</th>
-              <th>Shipments</th>
+              <th>Variants</th>
             </tr>
           </thead>
           <tbody>
-            <OrdersList orders={props.orders} />
+            <ProductsList products={props.products} />
           </tbody>
         </Table>
       </Container>
     )
   } else {
-    return <div>No orders yet</div>
+    return <div>No products yet</div>
   }
 }
 
-export default OrdersTable;
+export default ProductsTable;

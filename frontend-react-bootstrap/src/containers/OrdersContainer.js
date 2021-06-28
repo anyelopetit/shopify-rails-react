@@ -12,13 +12,12 @@ class OrdersContainer extends React.Component {
   }
 
   componentDidMount() {
-    console.log('OrdersContainer was mounted')
     this.props.getOrders();
   }
 
   render() {
-    if (this.props.orders.orders) {
-      return <OrdersTable orders={this.props.orders.orders} />
+    if (this.props.orders) {
+      return <OrdersTable orders={this.props.orders} />
     } else {
       return <h2>No orders yet.</h2>
     }

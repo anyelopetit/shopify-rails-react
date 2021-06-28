@@ -14,7 +14,10 @@ const AppNavbar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Link to="/" className="nav-link active">Orders</Link>
+            <Nav.Link as={Link} to="/" className="nav-link">Orders</Nav.Link>
+          </Nav>
+          <Nav className="mr-auto">
+            <Nav.Link as={Link} to="/products" className="nav-link">Products</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
