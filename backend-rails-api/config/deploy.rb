@@ -3,8 +3,6 @@
 # config valid for current version and patch releases of Capistrano
 lock '~> 3.16.0'
 
-require 'capistrano-db-tasks'
-
 set :application, 'shipit_test'
 set :repo_url, 'git@github.com:anyelopetit/shipit-test.git'
 
