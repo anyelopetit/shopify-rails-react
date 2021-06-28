@@ -38,6 +38,7 @@
 - To have [ngrok](https://ngrok.com) installed
 
 ## Backend Installation
+- Open Rails project: `cd backend-rails-api`
 - Install dependencies with `bundle install`
 - Add `.env` file in `backend-rails-api` folder root:
 ```
@@ -70,6 +71,8 @@ Run tests: `$ rspec`
 - Yarn 1.22.5
 
 ## Frontend Installation
+- Open another terminal tab
+- Open React project in this new tab: `cd ../frontend-react-bootstrap`
 - Install dependencies: `$ yarn install`
 - Add `.env` file in `frontend-react-bootstrap` folder root and added it the saved ngrok URL:
 ```
