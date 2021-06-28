@@ -6,7 +6,7 @@ RSpec.describe V1::ShipmentsController, type: :controller do
   let(:attributes) { Shipment.take.as_json }
   let(:order) { create(:order) }
   let(:shipment) { create(:shipment, order: order) }
-  let(:attribute_keys) { Shipment.attribute_names.map(&:to_sym) }
+  let(:attribute_keys) { Shipment.attribute_names.map(&:to_sym) | %i[order] }
 
   describe 'GET #index' do
     before do

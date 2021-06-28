@@ -403,6 +403,11 @@
           null,
           1,
           1,
+          null,
+          1,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -418,6 +423,9 @@
           null,
           null,
           null,
+          null,
+          1,
+          null,
           null
         ]
       },
@@ -425,6 +433,68 @@
         "lines": [
           1,
           1,
+          1,
+          null
+        ]
+      },
+      "/media/starklord/Projects/shipit-test/backend-rails-api/app/serializers/line_item_serializer.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/media/starklord/Projects/shipit-test/backend-rails-api/app/serializers/order_serializer.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/media/starklord/Projects/shipit-test/backend-rails-api/app/serializers/variant_serializer.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/media/starklord/Projects/shipit-test/backend-rails-api/app/serializers/product_serializer.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/media/starklord/Projects/shipit-test/backend-rails-api/app/serializers/shipment_serializer.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
           1,
           null
         ]
@@ -520,6 +590,6 @@
         }
       }
     },
-    "timestamp": 1624826238
+    "timestamp": 1624899132
   }
 }
