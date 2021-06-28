@@ -58,7 +58,6 @@ This is the ERD from database modelation:
 <a href="https://github.com/anyelopetit/shipit-test/blob/rails_erd_installation/backend-rails-api/erd.pdf">
   <img src="https://user-images.githubusercontent.com/19691938/123675400-aa1c7480-d810-11eb-87fd-79462feed7d2.png" alt="Logo" width="300" height="600">
 </a>
-![image](https://user-images.githubusercontent.com/19691938/123675400-aa1c7480-d810-11eb-87fd-79462feed7d2.png)
 1. Create database: `$ rails db:create`
 2. Migrate database: `$ rails db:migrate`
 3. Populate database: `$ rails db:seed`
