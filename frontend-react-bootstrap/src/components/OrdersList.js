@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '@fortawesome/fontawesome-free-solid'
 import NewShipmentButton from './NewShipmentButton';
@@ -24,7 +23,7 @@ const OrdersList = props => {
             <td>{order.total_price} {order.currency}</td>
             <td>{order.created_at}</td>
             <td>
-              <NewShipmentButton order_id={order.id} />
+              <NewShipmentButton order_id={order.id} shipments={order.shipments} />
             </td>
           </tr>
         )

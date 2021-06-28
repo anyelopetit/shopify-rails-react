@@ -5,4 +5,5 @@ class OrderSerializer < ActiveModel::Serializer
   attributes Order.column_names
 
   has_many :line_items
+  has_many :shipments
 end

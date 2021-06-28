@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe V1::OrdersController, type: :controller do
   let(:attributes) { JSON.parse(File.read("#{Rails.root}/order.json")).symbolize_keys! }
   let(:order) { create(:order) }
-  let(:attribute_keys) { Order.attribute_names.map(&:to_sym) | %i[line_items] }
+  let(:attribute_keys) { Order.attribute_names.map(&:to_sym) | %i[line_items shipments] }
 
   describe 'GET #index' do
     before do

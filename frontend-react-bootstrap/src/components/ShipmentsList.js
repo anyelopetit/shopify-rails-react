@@ -3,7 +3,8 @@ import { Table } from 'react-bootstrap';
 import '@fortawesome/fontawesome-free-solid'
 
 const ShipmentsList = props => {
-  if (Array.isArray(props.shipments)) {
+  console.log('props.shipments', props.shipments)
+  if (props.shipments?.length > 0) {
     return (
       props.shipments.map(shipment => {
         return(
@@ -21,21 +22,21 @@ const ShipmentsList = props => {
                 </tr>
               </thead>
               <tbody>
-                <tr key={shipment.order.id}>
+                <tr key={shipment?.order.id}>
                   <td key="order-payment">
-                    {shipment.order.payment.status}
+                    {shipment?.order.payment.status}
                   </td>
                   <td key="order-kind">
-                    {shipment.order.kind}
+                    {shipment?.order.kind}
                   </td>
                   <td key="order-reference">
-                    {shipment.order.reference}
+                    {shipment?.order.reference}
                   </td>
                   <td key="order-items">
-                    {shipment.order.items}
+                    {shipment?.order.items}
                   </td>
                   <td key="order-courier">
-                    {shipment.order.courier}
+                    {shipment?.order.courier}
                   </td>
                 </tr>
               </tbody>
@@ -57,22 +58,22 @@ const ShipmentsList = props => {
               <tbody>
                 <tr>
                   <td key="destiny-email">
-                    {shipment.destiny.email}
+                    {shipment?.destiny.email}
                   </td>
                   <td key="destiny-phone">
-                    {shipment.destiny.phone}
+                    {shipment?.destiny.phone}
                   </td>
                   <td key="destiny-street">
-                    {shipment.destiny.street}
+                    {shipment?.destiny.street}
                   </td>
                   <td key="destiny-commune_id">
-                    {shipment.destiny.commune_id}
+                    {shipment?.destiny.commune_id}
                   </td>
                   <td key="destiny-number">
-                    {shipment.destiny.number}
+                    {shipment?.destiny.number}
                   </td>
                   <td key="destiny-complement">
-                    {shipment.destiny.complement}
+                    {shipment?.destiny.complement}
                   </td>
                 </tr>
               </tbody>
@@ -94,22 +95,22 @@ const ShipmentsList = props => {
               <tbody>
                 <tr>
                   <td key="origin-email">
-                    {shipment.origin.email}
+                    {shipment?.origin.email}
                   </td>
                   <td key="origin-phone">
-                    {shipment.origin.phone}
+                    {shipment?.origin.phone}
                   </td>
                   <td key="origin-street">
-                    {shipment.origin.street}
+                    {shipment?.origin.street}
                   </td>
                   <td key="origin-commune_id">
-                    {shipment.origin.commune_id}
+                    {shipment?.origin.commune_id}
                   </td>
                   <td key="origin-number">
-                    {shipment.origin.number}
+                    {shipment?.origin.number}
                   </td>
                   <td key="origin-complement">
-                    {shipment.origin.complement}
+                    {shipment?.origin.complement}
                   </td>
                 </tr>
               </tbody>

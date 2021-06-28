@@ -12,8 +12,7 @@ const VariantsTable = props => {
             <Row>
               <Col className="d-flex">
                 <h3 className="mt-5">
-                  <Link to={'/products/' + props.product_id}>Product</Link>
-                  &nbsp; {'>'} Variants
+                  Variants
                 </h3>
               </Col>
             </Row>

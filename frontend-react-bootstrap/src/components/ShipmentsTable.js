@@ -1,7 +1,6 @@
 import React from 'react';
 import ShipmentsList from './ShipmentsList';
 import { Container, Row, Col, Jumbotron } from 'react-bootstrap';
-import { Link } from 'react-router-dom'
 
 const ShipmentsTable = props => {
   if (Array.isArray(props.shipments)) {

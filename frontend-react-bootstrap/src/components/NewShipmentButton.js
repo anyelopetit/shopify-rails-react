@@ -27,7 +27,7 @@ class NewShipmentButton extends React.Component {
   }
 
   render() {
-    if (Array.isArray(this.props.shipments)) {
+    if (this.props.shipments?.length > 0) {
       return(
         <Link to={'/orders/' + this.props.order_id + '/shipments'}>
           <Button variant="light" size="sm">
@@ -36,15 +36,16 @@ class NewShipmentButton extends React.Component {
           </Button>
         </Link>
       )
+    } else {
+      return (
+        <>
+          <form onSubmit={e => this.handleSubmit(e)}>
+            <input type="hidden" name="order_id" value={this.props.order_id} />
+            <input type="submit" className="btn btn-primary btn-sm" value="Deliver" />
+          </form>
+        </>
+      )
     }
-    return (
-      <>
-        <form onSubmit={e => this.handleSubmit(e)}>
-          <input type="hidden" name="order_id" value={this.props.order_id} />
-          <input type="submit" className="btn btn-primary btn-sm" value="Deliver" />
-        </form>
-      </>
-    )
   }
 }
 

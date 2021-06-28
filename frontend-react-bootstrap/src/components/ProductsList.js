@@ -9,11 +9,7 @@ const ProductsList = props => {
       props.products.map(product => {
         return(
           <tr key={product.id}>
-            <td>
-              <Link to={"/products/" + product.id}>
-                {product.id}
-              </Link>
-            </td>
+            <td>{product.id}</td>
             <td>{product.title}</td>
             <td>{product.vendor}</td>
             <td>{product.product_type}</td>
