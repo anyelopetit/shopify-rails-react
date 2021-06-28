@@ -10,5 +10,5 @@ class Shipment < ApplicationRecord
   }
 
   delegate :payment, :products, :origin, :sizes, :kind, :reference, :destiny,
-           :items, :courier, :total_price, to: :order
+           :items, :courier, to: :order
 end

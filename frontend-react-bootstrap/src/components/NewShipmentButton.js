@@ -4,6 +4,7 @@ import createShipment from '../actions/createShipment'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class NewShipmentButton extends React.Component {
   constructor(props) {
@@ -30,7 +31,8 @@ class NewShipmentButton extends React.Component {
       return(
         <Link to={'/orders/' + this.props.order_id + '/shipments'}>
           <Button variant="light" size="sm">
-            Shipment #{this.props.shipments[0].id}
+            <FontAwesomeIcon icon="eye" className="mx-1" />
+            Show
           </Button>
         </Link>
       )
