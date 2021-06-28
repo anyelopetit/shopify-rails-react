@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2021_06_27_192653) do
     t.string "items"
     t.string "courier"
     t.integer "status", default: 0
+    t.float "total_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

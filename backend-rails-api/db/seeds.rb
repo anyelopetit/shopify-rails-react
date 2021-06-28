@@ -11,7 +11,8 @@ puts "Shopify Store API has #{api_products&.size.to_i} products"
 
 api_products.each do |api_product|
   api_product = api_product.to_dot
-  api_product_attributes = api_product.as_json(only: Product.editable_attributes.map(&:to_s))
+  api_product_attributes =
+    api_product.as_json(only: Product.editable_attributes.map(&:to_s))
 
   product = Product.new(api_product_attributes)
   product.shopify_id = api_product.id
@@ -61,7 +62,10 @@ end
 api_orders.each do |api_order|
   api_order = api_order.to_dot
 
-  order = Order.new
+  api_order_attributes =
+    api_order.as_json(only: Order.editable_attributes.map(&:to_s))
+
+  order = Order.new(api_order_attributes)
   order.shopify_id = api_order.id
   order.payment = api_order.payment_gateway_names.present? ? api_order.payment_gateway_names : fake_order.payment
   order.products = api_order.line_items.present? ? api_order.line_items : fake_order.products
