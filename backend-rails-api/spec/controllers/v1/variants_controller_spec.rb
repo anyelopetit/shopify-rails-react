@@ -6,7 +6,7 @@ RSpec.describe V1::VariantsController, type: :controller do
   let(:attributes) { Variant.last.as_json }
   let(:product) { create(:product) }
   let(:variant) { create(:variant, product: product) }
-  let(:attribute_keys) { Variant.attribute_names.map(&:to_sym) }
+  let(:attribute_keys) { Variant.attribute_names.map(&:to_sym) | %i[product line_items] }
 
   describe 'GET #index' do
     before do

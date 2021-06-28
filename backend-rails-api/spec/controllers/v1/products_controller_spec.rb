@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe V1::ProductsController, type: :controller do
   let(:attributes) { Product.last.as_json }
   let(:product) { create(:product) }
-  let(:attribute_keys) { Product.attribute_names.map(&:to_sym) }
+  let(:attribute_keys) { Product.attribute_names.map(&:to_sym) | %i[variants] }
 
   describe 'GET #index' do
     before do

@@ -8,7 +8,7 @@ RSpec.describe V1::LineItemsController, type: :controller do
   let(:product) { create(:product) }
   let(:variant) { create(:variant, product: product) }
   let(:line_item) { create(:line_item, variant: variant, order: order) }
-  let(:attribute_keys) { LineItem.attribute_names.map(&:to_sym) }
+  let(:attribute_keys) { LineItem.attribute_names.map(&:to_sym) | %i[order variant] }
 
   describe 'GET #index' do
     before do
