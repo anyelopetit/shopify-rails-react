@@ -12,6 +12,7 @@ class CreateOrders < ActiveRecord::Migration[6.0]
       t.string :items
       t.string :courier
       t.integer :status, default: 0
+      t.float :total_price
 
       t.timestamps
     end
