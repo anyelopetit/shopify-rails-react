@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: backend_rails_api_production
-  username: backend_rails_api
+  username: deploy
   password: <%= ENV['BACKEND_RAILS_API_DATABASE_PASSWORD'] %>

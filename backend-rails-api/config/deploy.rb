@@ -5,8 +5,12 @@ lock '~> 3.16.0'
 
 set :application, 'shipit_test'
 set :repo_url, 'git@github.com:anyelopetit/shipit-test.git'
+set :deploy_subdir, './backend-rails-api'
+set :repo_tree, 'backend-rails-api'
+set :rbenv_path, '/home/deploy/.rbenv'
 
 # Default branch is :master
+set :branch, 'main'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
@@ -45,6 +49,17 @@ set :linked_dirs, fetch(:linked_dirs, []).push(
   'public/system', 'public/uploads'
 )
 
-set :rvm_ruby_version, '2.6.5'
+# set :rvm_ruby_version, '2.6.5'
 
 set :passenger_restart_with_touch, true
+
+namespace :deploy do
+  task :install_dependencies do
+    on roles(:web), in: :sequence, wait: 5 do
+      within release_path do
+        execute :bundle, "--without development test"
+      end
+    end
+  end
+  after :published, :install_dependencies
+end
