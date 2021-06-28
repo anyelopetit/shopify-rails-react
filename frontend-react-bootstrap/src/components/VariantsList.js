@@ -1,37 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '@fortawesome/fontawesome-free-solid'
 
 const VariantsList = props => {
-  if (Array.isArray(props.variantts)) {
+  if (Array.isArray(props.variants)) {
     return (
-      props.variantts.map(variantt => {
+      props.variants.map(variant => {
         return(
-          <tr key={variantt.id}>
+          <tr key={variant.id}>
             <td>
-              <Link to={"/variantts/" + variantt.id}>
-                {variantt.id}
+              <Link to={"products/" + props.product_id + "/variants/" + variant.id}>
+                {variant.id}
               </Link>
             </td>
-            <td>
-              <a href={process.env.REACT_APP_SHOPIFY_ROOT + '/variantts/' + variantt.shopify_id + '.json'} target="_blank" rel="noreferrer">
-                {variantt.kind}
-                <FontAwesomeIcon icon={['fas', "external-link-square-alt"]} className="mx-1" />
-              </a>
-            </td>
-            <td>
-              {variantt.reference}
-            </td>
-            <td>{variantt.status}</td>
-            <td>{variantt.total_price} {variantt.currency}</td>
-            <td>{variantt.created_at}</td>
+            <td>{variant.title}</td>
+            <td>{variant.price} {variant.currency}</td>
+            <td>{variant.created_at}</td>
           </tr>
         )
       })
     )
   } else {
-    return <div>No variantts yet</div>
+    return <div>No variants yet</div>
   }
 }
 

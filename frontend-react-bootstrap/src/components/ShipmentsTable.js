@@ -1,6 +1,7 @@
 import React from 'react';
 import ShipmentsList from './ShipmentsList';
-import { Container, Row, Col, Table, Jumbotron } from 'react-bootstrap';
+import { Container, Row, Col, Jumbotron } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 
 const ShipmentsTable = props => {
   if (Array.isArray(props.shipments)) {
@@ -9,29 +10,15 @@ const ShipmentsTable = props => {
         <Jumbotron fluid>
           <Container>
             <Row>
-              <Col>
-                <h1 className="mt-5 d-flex justify-content-between">
+              <Col className="d-flex">
+                <h3 className="mt-5">
                   Shipments
-                </h1>
+                </h3>
               </Col>
             </Row>
           </Container>
         </Jumbotron>
-        <Table striped bordered hover>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Kind</th>
-              <th>Reference</th>
-              <th>Status</th>
-              <th>Price</th>
-              <th>Created</th>
-            </tr>
-          </thead>
-          <tbody>
-            <ShipmentsList shipments={props.shipments} />
-          </tbody>
-        </Table>
+        <ShipmentsList shipments={props.shipments} />
       </Container>
     )
   } else {

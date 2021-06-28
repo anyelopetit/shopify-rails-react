@@ -18,7 +18,7 @@ class VariantsContainer extends React.Component {
 
   render() {
     if (this.props.variants) {
-      return <VariantsTable variants={this.props.variants} />
+      return <VariantsTable product_id={this.product_id} variants={this.props.variants} />
     } else {
       return <h2>No variants yet.</h2>
     }

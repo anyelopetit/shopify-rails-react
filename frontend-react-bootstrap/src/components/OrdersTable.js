@@ -1,20 +1,18 @@
 import React from 'react';
 import OrdersList from './OrdersList';
 import { Container, Row, Col, Table, Jumbotron } from 'react-bootstrap';
-import ButtonNew from './ButtonNew'
 
 const OrdersTable = props => {
-  if (props.orders) {
+  if (Array.isArray(props.orders)) {
     return(
       <Container>
         <Jumbotron fluid>
           <Container>
             <Row>
               <Col>
-                <h1 className="mt-5 d-flex justify-content-between">
+                <h3 className="mt-5 d-flex justify-content-between">
                   Orders
-                  <ButtonNew url="/orders/new" text="Create order" />
-                </h1>
+                </h3>
               </Col>
             </Row>
           </Container>

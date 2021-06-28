@@ -10,9 +10,9 @@ const ProductsTable = props => {
           <Container>
             <Row>
               <Col>
-                <h1 className="mt-5 d-flex justify-content-between">
+                <h3 className="mt-5 d-flex justify-content-between">
                   Products
-                </h1>
+                </h3>
               </Col>
             </Row>
           </Container>

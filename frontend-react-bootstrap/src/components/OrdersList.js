@@ -10,11 +10,7 @@ const OrdersList = props => {
       props.orders.map(order => {
         return(
           <tr key={order.id}>
-            <td>
-              <Link to={"/orders/" + order.id}>
-                {order.id}
-              </Link>
-            </td>
+            <td>{order.id}</td>
             <td>
               <a href={process.env.REACT_APP_SHOPIFY_ROOT + '/orders/' + order.shopify_id + '.json'} target="_blank" rel="noreferrer">
                 {order.kind}

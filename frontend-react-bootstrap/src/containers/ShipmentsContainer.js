@@ -18,7 +18,7 @@ class ShipmentsContainer extends React.Component {
 
   render() {
     if (this.props.shipments) {
-      return <ShipmentsTable shipments={this.props.shipments} />
+      return <ShipmentsTable order_id={this.order_id} shipments={this.props.shipments} />
     } else {
       return <h2>No shipments yet.</h2>
     }

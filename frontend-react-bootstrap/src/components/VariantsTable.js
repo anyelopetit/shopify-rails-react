@@ -1,6 +1,7 @@
 import React from 'react';
 import VariantsList from './VariantsList';
 import { Container, Row, Col, Table, Jumbotron } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 
 const VariantsTable = props => {
   if (Array.isArray(props.variants)) {
@@ -9,10 +10,11 @@ const VariantsTable = props => {
         <Jumbotron fluid>
           <Container>
             <Row>
-              <Col>
-                <h1 className="mt-5 d-flex justify-content-between">
-                  Variants
-                </h1>
+              <Col className="d-flex">
+                <h3 className="mt-5">
+                  <Link to={'/products/' + props.product_id}>Product</Link>
+                  &nbsp; {'>'} Variants
+                </h3>
               </Col>
             </Row>
           </Container>
@@ -21,12 +23,9 @@ const VariantsTable = props => {
           <thead>
             <tr>
               <th>ID</th>
-              <th>Kind</th>
-              <th>Reference</th>
-              <th>Status</th>
+              <th>Title</th>
               <th>Price</th>
               <th>Created</th>
-              <th>Variants</th>
             </tr>
           </thead>
           <tbody>
