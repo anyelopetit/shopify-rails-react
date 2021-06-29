@@ -49,6 +49,8 @@ set :linked_dirs, fetch(:linked_dirs, []).push(
   'public/system', 'public/uploads'
 )
 
+append :linked_files, 'config/database.yml', 'config/secrets.yml'
+
 # set :rvm_ruby_version, '3.0.1'
 
 set :passenger_restart_with_touch, true
