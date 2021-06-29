@@ -4,7 +4,7 @@
 lock '~> 3.16.0'
 
 set :application, 'shipit_test'
-set :repo_url, 'git@github.com:anyelopetit/shipit-test.git'
+set :repo_url, 'git@github.com:anyelopetit/shipit_test.git'
 set :deploy_subdir, './backend-rails-api'
 set :repo_tree, 'backend-rails-api'
 set :rbenv_path, '/home/deploy/.rbenv'
@@ -14,7 +14,7 @@ set :branch, 'main'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/home/deploy/shipit-test'
+set :deploy_to, '/home/deploy/shipit_test'
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
