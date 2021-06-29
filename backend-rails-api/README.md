@@ -25,7 +25,7 @@
 # Rails API
 
 ## Requeriments
-- Ruby 2.6.5
+- Ruby 3.0.1
 - Rails 6.0.4
 - To have [ngrok](https://ngrok.com) installed
 

@@ -49,7 +49,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push(
   'public/system', 'public/uploads'
 )
 
-# set :rvm_ruby_version, '2.6.5'
+# set :rvm_ruby_version, '3.0.1'
 
 set :passenger_restart_with_touch, true
 
