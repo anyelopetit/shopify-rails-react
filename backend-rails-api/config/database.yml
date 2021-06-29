@@ -85,4 +85,6 @@ production:
   <<: *default
   database: backend_rails_api_production
   username: deploy
-  password: <%= ENV['BACKEND_RAILS_API_DATABASE_PASSWORD'] %>
+  password: 1234
+  port: <%= ENV.fetch("DB_PORT") { 5432 } %>
+  host: ''
