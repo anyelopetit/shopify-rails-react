@@ -4,7 +4,7 @@
 lock '~> 3.16.0'
 
 set :application, 'shipit_test'
-set :repo_url, 'git@github.com:anyelopetit/shipit_test.git'
+set :repo_url, 'git@github.com:anyelopetit/shipit-test.git'
 set :deploy_subdir, './backend-rails-api'
 set :repo_tree, 'backend-rails-api'
 set :rbenv_path, '/home/deploy/.rbenv'
