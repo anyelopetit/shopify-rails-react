@@ -1,10 +1,4 @@
-# Shipit Test
-
-<h1 align="center">
-  <a href="https://www.shipit.cl/">
-    <img src="https://www.shipit.cl/hs-fs/hubfs/img/shipit-logo.png?width=1000&name=shipit-logo.png" alt="Logo" width="250" height="125">
-  </a>
-</h1>
+# Shopify Rails React
 
 <div align="center">
   Amazing test project for consuming Shopify API, building Rails API and consuming from a React App. 
